@@ -242,18 +242,18 @@ macro_rules! define_spi_drivers {
 #[cfg(context = "nrf52833")]
 define_spi_drivers!(
     // FIXME: arbitrary selected peripherals
-    // SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0 => TWISPI0,
-    // SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1 => TWISPI1,
-    // SPIM2_SPIS2_SPI2 => SPI2,
+    // TWISPI0 => TWISPI0,
+    // TWISPI1 => TWISPI1,
+    // SPI2 => SPI2,
     SPIM3 => SPI3,
 );
 #[cfg(context = "nrf52840")]
 define_spi_drivers!(
     // FIXME: arbitrary selected peripherals
-    // SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0 => TWISPI0,
-    // SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1 => TWISPI1,
-    // SPIM2_SPIS2_SPI2 => SPI2,
-    SPIM3 => SPI3,
+    // TWISPI0 => TWISPI0,
+    TWISPI1 => TWISPI1,
+    // SPI2 => SPI2,
+    // SPIM3 => SPI3,
 );
 // FIXME: arbitrary selected peripherals
 #[cfg(context = "nrf5340-app")]
