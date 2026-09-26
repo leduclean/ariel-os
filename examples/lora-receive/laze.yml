@@ -1,0 +1,15 @@
+apps:
+  - name: lora-send
+    selects:
+      - log
+      - logging-over-custom-transport
+      - usb
+    context:
+      # list of contexts that have an entry in `pins.rs`
+      - rpi-pico
+    env:
+      global:
+        RUSTFLAGS:
+          # lora-phy hard-depends on defmt 0.3, so its `.defmt.*` sections exist
+          # even with the `log` facade and need defmt's linker script.
+          - -Clink-arg=-Tdefmt.x
