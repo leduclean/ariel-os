@@ -1,0 +1,20 @@
+[package]
+name = "lora-send"
+edition.workspace = true
+license.workspace = true
+publish = false
+
+[dependencies]
+ariel-os = { path = "../../src/ariel-os", features = [
+  "external-interrupts",
+  "spi",
+  "time",
+] }
+ariel-os-boards = { path = "../../src/ariel-os-boards" }
+embassy-sync = { workspace = true }
+embassy-futures = { workspace = true }
+embedded-io-async = { version = "0.7" }
+lora-phy = { version = "3.0.1" }
+
+[lints]
+workspace = true
